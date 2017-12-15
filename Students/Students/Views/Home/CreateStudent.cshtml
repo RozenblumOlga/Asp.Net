@@ -1,0 +1,28 @@
+﻿@model Students.Models.Student
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новый студент</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Number, "Номер зачётной книжки")
+    <br />
+    @Html.EditorFor(model => model.Number)
+    <br /><br />
+    @Html.LabelFor(model => model.FirstName, "Имя")
+    <br />
+    @Html.EditorFor(model => model.FirstName)
+    <br /><br />
+    @Html.LabelFor(model => model.LastName, "Фамилия")
+    <br />
+    @Html.EditorFor(model => model.LastName)
+    <br /><br />
+    @Html.LabelFor(model => model.Group, "Группа")
+    <br />
+    @Html.EditorFor(model => model.Group)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}

@@ -1,0 +1,31 @@
+﻿@model Students.Models.Student
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Удаление студента</h2>
+<dl>
+    <dt>Номер зачётной книжки</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Number)
+    </dd>
+
+    <dt>Имя</dt>
+    <dd>
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+
+    <dt>Фамилия</dt>
+    <dd>
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+
+    <dt>Группа</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Group)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

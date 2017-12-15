@@ -1,0 +1,41 @@
+﻿@using Students.Models
+@model IEnumerable<Student>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+<div>
+    <h3> </h3>
+    <table class="table">
+        <tr class="header" style="background: #9CAFB7">
+            <td>
+                <p>Имя</p></td>
+            <td>
+                <p>Фамилия</p></td>
+            <td>
+                <p>Группа</p></td>
+            <td>
+                <p>Номер зачётной книжки</p></td>
+            <td></td>
+        </tr>
+        @foreach (Student s in Model)
+        {
+            <tr>
+                <td>
+                    <p>@s.FirstName</p></td>
+                <td>
+                    <p>@s.LastName</p></td>
+                <td>
+                    <p>@s.Group</p></td>
+                <td>
+                    <p>@s.Number</p></td>
+                <td>
+                    @Html.ActionLink("Details", "StudentView", new {id = s.Id}) |
+                    @Html.ActionLink("Edit", "EditStudent", new {id = s.Id}) |
+                    @Html.ActionLink("Delete", "DeleteStudent", new {id = s.Id})
+                </td>
+            </tr>
+        }
+    </table>
+    <p>@Html.ActionLink(" + Student ", "CreateStudent")</p>
+</div>

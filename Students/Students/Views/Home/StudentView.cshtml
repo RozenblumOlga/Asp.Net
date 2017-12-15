@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Students.Models.Student
+
+<h2>Студент № @Model.Id</h2>
+<dl>
+    <dt>Номер зачётной книжки</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Number)
+    </dd>
+
+    <dt>Имя</dt>
+    <dd>
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+
+    <dt>Фамилия</dt>
+    <dd>
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+
+    <dt>Группа</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Group)
+    </dd>
+
+    <dd>
+        @Html.ActionLink("Назад", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    </dd>
+</dl>
+
+<p>
+    <br/>
+</p>
